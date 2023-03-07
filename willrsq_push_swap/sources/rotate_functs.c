@@ -1,10 +1,10 @@
-#include "push_swap.h"
+#include "../ps_wrs.h"
 
-void		ft_rotate_a(t_push_swap **stack_a)
+void		ft_rotate_a(t_ps_wrs **stack_a)
 {
-	t_push_swap	*first;
-	t_push_swap	*last;
-	t_push_swap	*second;
+	t_ps_wrs	*first;
+	t_ps_wrs	*last;
+	t_ps_wrs	*second;
 
 	first = *stack_a;
 	last = ft_ps_lst_last(*stack_a);
@@ -17,11 +17,11 @@ void		ft_rotate_a(t_push_swap **stack_a)
 	write(1, "ra\n", 3);
 }
 
-void		ft_rotate_b(t_push_swap **stack_b)
+void		ft_rotate_b(t_ps_wrs **stack_b)
 {
-	t_push_swap	*first;
-	t_push_swap	*last;
-	t_push_swap	*second;
+	t_ps_wrs	*first;
+	t_ps_wrs	*last;
+	t_ps_wrs	*second;
 
 	first = *stack_b;
 	last = ft_ps_lst_last(*stack_b);
@@ -36,11 +36,11 @@ void		ft_rotate_b(t_push_swap **stack_b)
 	write(1, "rb\n", 3);
 }
 
-void		ft_reverse_rotate_a(t_push_swap **stack_a)
+void		ft_reverse_rotate_a(t_ps_wrs **stack_a)
 {
-	t_push_swap	*first;
-	t_push_swap	*last;
-	t_push_swap	*second_to_last;
+	t_ps_wrs	*first;
+	t_ps_wrs	*last;
+	t_ps_wrs	*second_to_last;
 
 	first = *stack_a;
 	last = ft_ps_lst_last(*stack_a);
@@ -53,11 +53,11 @@ void		ft_reverse_rotate_a(t_push_swap **stack_a)
 	write(1, "rra\n", 4);
 }
 
-void		ft_reverse_rotate_b(t_push_swap **stack_b)
+void		ft_reverse_rotate_b(t_ps_wrs **stack_b)
 {
-	t_push_swap	*first;
-	t_push_swap	*last;
-	t_push_swap	*second_to_last;
+	t_ps_wrs	*first;
+	t_ps_wrs	*last;
+	t_ps_wrs	*second_to_last;
 
 	first = *stack_b;
 	last = ft_ps_lst_last(*stack_b);

@@ -1,5 +1,5 @@
 
-#include "push_swap.h"
+#include "../ps_wrs.h"
 
 /* NEEDED FUNCTIONS
 LST SIZE
@@ -9,27 +9,27 @@ FT PUSH B
 FT ROTATE B
 FT ROTATE A */
 
-void    ft_algorithm(t_push_swap **stack_a, t_push_swap **stack_b)
+void    ft_willrsq_algorithm(t_ps_wrs **stack_a, t_ps_wrs **stack_b)
 {
 	int			size;
-	int			margin;
+	int			will;
 	int			tenth_of_size;
-	t_push_swap	*a;
-	t_push_swap	*b;
+	t_ps_wrs	*a;
+	t_ps_wrs	*b;
 
 	a = *stack_a;
 	size = ft_ps_lst_size(stack_a); // prend la nombre de nombres dans la stack
 	ft_ps_ranking(stack_a); // trie les nombres de 1 à taille max;
 	tenth_of_size = size * 0.1;
-	margin = tenth_of_size; // parametre de base
+	will = tenth_of_size; // parametre de base
 	while (a)
 	{
-		if (a->rank <= margin) // si l'elem est un des plus petits elem de la liste
+		if (a->rank <= will) // si l'elem est un des plus petits elem de la liste
 		{
-			ft_push_from_a_to_b(stack_a, stack_b); // met l'elem compris entre 0 et margin dans B.
-			margin++;
+			ft_push_from_a_to_b(stack_a, stack_b); // met l'elem compris entre 0 et will dans B.
+			will++;
 			b = *stack_b;
-			if (b->rank < margin - tenth_of_size)
+			if (b->rank < will - tenth_of_size)
 				ft_rotate_b(stack_b);
 		}
 		else
@@ -37,10 +37,10 @@ void    ft_algorithm(t_push_swap **stack_a, t_push_swap **stack_b)
 		a = *stack_a;
 	}
 	// mtn, tout a est passé dans b
-	ft_algorithm_part_2(stack_a, stack_b);
+	ft_willrsq_algorithm_part_2(stack_a, stack_b);
 }
 
-void    ft_algorithm_part_2(t_push_swap **stack_a, t_push_swap **stack_b)
+void    ft_willrsq_algorithm_part_2(t_ps_wrs **stack_a, t_ps_wrs **stack_b)
 {
 	/* NEEDED FUNCTIONS
 	FT FIND DIRECTION MAX ___________
@@ -50,7 +50,7 @@ void    ft_algorithm_part_2(t_push_swap **stack_a, t_push_swap **stack_b)
 	FT PUSH A*/
 	int	pos;
 	int max;
-	t_push_swap *b;
+	t_ps_wrs *b;
 
 	b = *stack_b;
 	while (b)

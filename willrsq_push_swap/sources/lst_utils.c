@@ -1,9 +1,9 @@
-#include "push_swap.h"
+#include "../ps_wrs.h"
 
-int	ft_ps_lst_size(t_push_swap **stack)
+int	ft_ps_lst_size(t_ps_wrs **stack)
 {
 	int	i;
-	t_push_swap	*lst;
+	t_ps_wrs	*lst;
 
 	i = 0;
 	lst = *stack;
@@ -15,10 +15,10 @@ int	ft_ps_lst_size(t_push_swap **stack)
 	return (i);
 }
 
-int	ft_ps_lst_is_sorted(t_push_swap *lst)
+int	ft_ps_lst_is_sorted(t_ps_wrs *lst)
 {
 	int		temp;
-	t_push_swap	*being_checked;
+	t_ps_wrs	*being_checked;
 
 	while (lst)
 	{
@@ -35,7 +35,7 @@ int	ft_ps_lst_is_sorted(t_push_swap *lst)
 	return (1);
 }
 
-t_push_swap *ft_ps_lst_last(t_push_swap *lst)
+t_ps_wrs *ft_ps_lst_last(t_ps_wrs *lst)
 {
 	while (lst->next)
 		lst = lst->next;

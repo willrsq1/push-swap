@@ -1,29 +1,29 @@
-#include "push_swap.h"
+#include "../ps_wrs.h"
 
 int main(int argc, char **argv)
 {
-	t_push_swap *stack_a;
-	t_push_swap *stack_b;
+	t_ps_wrs *stack_a;
+	t_ps_wrs *stack_b;
 
 	if (argc != 1)
 	{
 		stack_a = ft_ps_stack_creation(argc, argv);
 		stack_b = NULL;
 		ft_ps_arguments_check(&stack_a);
-		ft_algorithm(&stack_a, &stack_b);
+		ft_willrsq_algorithm(&stack_a, &stack_b);
 		ft_ps_free_and_exit(&stack_a, &stack_b);
 	}
 	return (0);
 }
 
-t_push_swap *ft_ps_stack_creation(int argc, char **argv)
+t_ps_wrs *ft_ps_stack_creation(int argc, char **argv)
 {
-	t_push_swap *first_lst;
-	t_push_swap *lst;
-	t_push_swap *temp;
+	t_ps_wrs *first_lst;
+	t_ps_wrs *lst;
+	t_ps_wrs *temp;
 	int i;
 
-	first_lst = malloc(sizeof(t_push_swap));
+	first_lst = malloc(sizeof(t_ps_wrs));
 	if (!first_lst)
 		ft_ps_free_and_exit(NULL, NULL);
 	first_lst->number = ft_ps_atoi(NULL, argv[1]);
@@ -33,7 +33,7 @@ t_push_swap *ft_ps_stack_creation(int argc, char **argv)
 	i = 1;
 	while (++i < argc)
 	{
-		lst = malloc(sizeof(t_push_swap));
+		lst = malloc(sizeof(t_ps_wrs));
 		lst->number = ft_ps_atoi(&first_lst, argv[i]);
 		lst->rank = -1;
 		lst->previous = temp;
@@ -43,10 +43,10 @@ t_push_swap *ft_ps_stack_creation(int argc, char **argv)
 	return (first_lst);
 }
 
-void ft_ps_free_and_exit(t_push_swap **stack_a, t_push_swap **stack_b)
+void ft_ps_free_and_exit(t_ps_wrs **stack_a, t_ps_wrs **stack_b)
 {
-	t_push_swap *lst;
-	t_push_swap *temp;
+	t_ps_wrs *lst;
+	t_ps_wrs *temp;
 
 	exit(0);
 	lst = *stack_a;
@@ -72,7 +72,7 @@ void ft_ps_free_and_exit(t_push_swap **stack_a, t_push_swap **stack_b)
 	exit(0);
 }
 
-int ft_ps_atoi(t_push_swap **stack_a, char *str)
+int ft_ps_atoi(t_ps_wrs **stack_a, char *str)
 {
 	unsigned long long result;
 	int sign;
@@ -98,10 +98,10 @@ int ft_ps_atoi(t_push_swap **stack_a, char *str)
 	return (result * sign);
 }
 
-void ft_ps_arguments_check(t_push_swap **stack_a)
+void ft_ps_arguments_check(t_ps_wrs **stack_a)
 {
-	t_push_swap *temp;
-	t_push_swap *dpl;
+	t_ps_wrs *temp;
+	t_ps_wrs *dpl;
 
 	temp = *stack_a;
 	while (temp)

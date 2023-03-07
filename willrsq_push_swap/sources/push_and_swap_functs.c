@@ -1,11 +1,11 @@
-#include "push_swap.h"
+#include "../ps_wrs.h"
 
 
-void		ft_push_from_a_to_b(t_push_swap **stack_a, t_push_swap **stack_b)
+void		ft_push_from_a_to_b(t_ps_wrs **stack_a, t_ps_wrs **stack_b)
 {
-	t_push_swap	*pushed_list;
-	t_push_swap	*stack_a_second_list;
-	t_push_swap	*stack_b_first_list;
+	t_ps_wrs	*pushed_list;
+	t_ps_wrs	*stack_a_second_list;
+	t_ps_wrs	*stack_b_first_list;
 
 	pushed_list = *stack_a;
 	if (pushed_list->next)
@@ -24,11 +24,11 @@ void		ft_push_from_a_to_b(t_push_swap **stack_a, t_push_swap **stack_b)
 	write(1, "pb\n", 3);
 }
 
-void		ft_push_from_b_to_a(t_push_swap **stack_b, t_push_swap **stack_a)
+void		ft_push_from_b_to_a(t_ps_wrs **stack_b, t_ps_wrs **stack_a)
 {
-	t_push_swap	*pushed_list;
-	t_push_swap	*stack_b_second_list;
-	t_push_swap	*stack_a_first_list;
+	t_ps_wrs	*pushed_list;
+	t_ps_wrs	*stack_b_second_list;
+	t_ps_wrs	*stack_a_first_list;
 
 	pushed_list = *stack_b;
 	if (pushed_list->next)
@@ -47,10 +47,10 @@ void		ft_push_from_b_to_a(t_push_swap **stack_b, t_push_swap **stack_a)
 	write(1, "pa\n", 3);
 }
 
-void		ft_swap_a(t_push_swap **stack_a)
+void		ft_swap_a(t_ps_wrs **stack_a)
 {
-	t_push_swap	*first;
-	t_push_swap *second;
+	t_ps_wrs	*first;
+	t_ps_wrs *second;
 
 	first = *stack_a;
 	if (first->next)

@@ -1,11 +1,11 @@
-#include "push_swap.h"
+#include "../ps_wrs.h"
 
-void	ft_ps_ranking(t_push_swap **stack_a)
+void	ft_ps_ranking(t_ps_wrs **stack_a)
 {
 	int	min;
 	int	rank;
 	int	size;
-	t_push_swap	*lst;
+	t_ps_wrs	*lst;
 
 	rank = 1;
 	size = ft_ps_lst_size(stack_a);
@@ -28,10 +28,10 @@ void	ft_ps_ranking(t_push_swap **stack_a)
 	}
 }
 
-int	ft_find_direction_max(t_push_swap **stack_b)
+int	ft_find_direction_max(t_ps_wrs **stack_b)
 {
-	t_push_swap	*lst;
-	t_push_swap	*end;
+	t_ps_wrs	*lst;
+	t_ps_wrs	*end;
 	int		max;
 
 	lst = *stack_b;
@@ -56,7 +56,7 @@ int	ft_find_direction_max(t_push_swap **stack_b)
 	return (0);
 }
 
-int	ft_find_new_max(t_push_swap *lst)
+int	ft_find_new_max(t_ps_wrs *lst)
 {
 	int	max;
 
